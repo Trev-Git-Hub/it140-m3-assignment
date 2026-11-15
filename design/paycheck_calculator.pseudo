@@ -10,18 +10,25 @@
 
 START paycheck_calculator
 
-    TODO: Obtain the required program input.
+   GET "employee" name from user.
+   GET "hours" from user, LET "hours" to allow for decimals. 
+   GET "rate" from rubric, LET "rate" to be hardcoded
+   GET "Overtime_rate", LET "overtime_rate" with half of "rate" multipied by "rate" 
+    
 
-    IF TODO: Specify the condition for the applicable pay rule.
-        TODO: List the processing steps for the true decision path.
-    ELSE
-        TODO: List the processing steps for the false decision path.
-    ENDIF
+    IF "hours" is greater than zero and less than or equal to forty.
+        LET "pay" with "hours" multiplied by "rate"
+        PUT "employee"('s) paycheck: ($)"pay"
 
-    TODO: Output the calculated weekly paycheck.
+    ELIF "hours" is greater than forty 
+        LET "overtime_hours" equal "hours" minus forty
+        LET "pay" equal "rate" multiplied by forty, plus "overtime_hours" multiplied by "rate"
+        PUT "employee"('s) paycheck: ($)"pay"
+    else
+        PUT ""Invalid entries""
+
 
 END paycheck_calculator
 
 
-# === References ===
-# TODO: List outside sources or assistance you actually used, or delete this line.
+
